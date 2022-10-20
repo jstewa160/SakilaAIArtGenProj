@@ -20,6 +20,7 @@ public class SakilaFilmArtGenApplication {
 
 	@Autowired
 	private ActorRepo actorRepo;
+	private FilmRepo filmRepo;
 	public SakilaFilmArtGenApplication(ActorRepo actorRepo){
 		this.actorRepo = actorRepo;
 	}
@@ -51,16 +52,38 @@ public class SakilaFilmArtGenApplication {
 	public Map<String, Boolean> deleteActor(@PathVariable(value = "id") int actorId)
 		throws ResourceAccessException{
 		Actor actorHere = actorRepo.findById(actorId)
-				.orElseThrow(() -> new ResourceAccessException("Employee not found for this id :: " + actorId));
+				.orElseThrow(() -> new ResourceAccessException("Actor not found for this id :: " + actorId));
 
 		actorRepo.delete(actorHere);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
 	}
-//	Iterable<Actor> putAllActors(){
-//
-//
-//	}
+
+	@GetMapping("/allFilms")
+	Iterable<Film> getAllFilms() { return filmRepo.findAll(); }
+
+	@PutMapping("/allFilms/{id}")
+	public ResponseEntity<Film> updateFilm(@PathVariable(value = "id") Integer filmId,
+										   @Validated @RequestBody Film film) throws ResourceAccessException{
+			Film filmHere = filmRepo.findById(filmId)
+					.orElseThrow(() -> new ResourceAccessException("Film not found for this id :: " + filmId));
+
+			film.setFilmId(film.getFilmId());
+			film.setFilmTitle(film.getFilmTitle());
+			final Film updatedFilm = filmRepo.save(film);
+			return ResponseEntity.ok(updatedFilm);
+	}
+
+	@DeleteMapping("/allFilms/{id}")
+	public Map<String, Boolean> deleteFilm(@PathVariable(value = "id") int filmId)
+		throws ResourceAccessException{
+		Film filmHere = filmRepo.findById(filmId)
+				.orElseThrow(() -> new ResourceAccessException("Film not found for this id :: " + filmId));
+		filmRepo.delete(filmHere);
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("deleted", Boolean.TRUE);
+		return response;
+	}
 
 }
