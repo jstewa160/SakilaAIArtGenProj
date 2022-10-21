@@ -24,7 +24,6 @@ public class Actor {
     public Actor(String hereFirstName, String hereLastName){
         this.actorFirstName = hereFirstName;
         this.actorLastName = hereLastName;
-
     }
 
     public Actor(){
@@ -40,7 +39,7 @@ public class Actor {
         this.actorId = actorId;
     }
 
-    public String getActorFirstName() {
+    public static String getActorFirstName() {
         return actorFirstName;
     }
 
@@ -48,7 +47,7 @@ public class Actor {
         this.actorFirstName = actorFirstName;
     }
 
-    public String getActorLastName() {
+    public static String getActorLastName() {
         return actorLastName;
     }
 
