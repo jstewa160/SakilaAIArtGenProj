@@ -3,7 +3,6 @@ package APIComponents.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +19,11 @@ public class SakilaFilmArtGenApplication {
 
 	@Autowired
 	private ActorRepo actorRepo;
+	@Autowired
 	private FilmRepo filmRepo;
-	public SakilaFilmArtGenApplication(ActorRepo actorRepo){
+	public SakilaFilmArtGenApplication(ActorRepo actorRepo, FilmRepo filmRepo){
 		this.actorRepo = actorRepo;
+		this.filmRepo = filmRepo;
 	}
 
 	public static void main(String[] args) {
@@ -68,9 +69,10 @@ public class SakilaFilmArtGenApplication {
 										   @Validated @RequestBody Film film) throws ResourceAccessException{
 			Film filmHere = filmRepo.findById(filmId)
 					.orElseThrow(() -> new ResourceAccessException("Film not found for this id :: " + filmId));
-
 			film.setFilmId(film.getFilmId());
 			film.setFilmTitle(film.getFilmTitle());
+            film.setFilmDesc(film.getFilmDesc());
+			film.setFilmRating(film.getFilmRating());
 			final Film updatedFilm = filmRepo.save(film);
 			return ResponseEntity.ok(updatedFilm);
 	}

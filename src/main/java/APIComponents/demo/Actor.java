@@ -32,8 +32,6 @@ public class Actor {
     }
 
     //Methods
-
-
     public int getActorId() {
         return actorId;
     }
