@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "actor")
 
 
+
 public class Actor {
     //Attributes
     @Id
@@ -39,7 +40,7 @@ public class Actor {
         this.actorId = actorId;
     }
 
-    public static String getActorFirstName() {
+    public String getActorFirstName() {
         return actorFirstName;
     }
 
@@ -47,7 +48,7 @@ public class Actor {
         this.actorFirstName = actorFirstName;
     }
 
-    public static String getActorLastName() {
+    public String getActorLastName() {
         return actorLastName;
     }
 
