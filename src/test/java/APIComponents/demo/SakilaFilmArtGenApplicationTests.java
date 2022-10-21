@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SakilaFilmArtGenApplicationTests {
 
 	@Test
-	public void givenActorFirstLastName_whenGetMapping_returnSuccess() {
+	public static void givenActorFirstLastName_whenGetMapping_returnSuccess() {
 
         String actualFirstName = Actor.getActorFirstName();
         String actualLastName = Actor.getActorLastName();
