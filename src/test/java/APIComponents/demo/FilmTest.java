@@ -49,7 +49,12 @@ public class FilmTest {
 
     @Test
     public void testFilmTitle_whenPutMapping_returnSuccess(){
+        myFilmtest.setFilmTitle("ACADEMY DINOSAURR");
 
+        String expectedFilmTitle = "ACADEMY DINOSAURR";
+        String actualFilmTitle = myFilmtest.getFilmTitle();
+
+        Assertions.assertEquals(expectedFilmTitle, actualFilmTitle, "Film title mismatched from setter method");
     }
 
 }
