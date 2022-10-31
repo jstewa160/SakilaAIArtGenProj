@@ -9,6 +9,8 @@ public class FilmTest {
             "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",
             "PG");
 
+    Film myFilmTestTwo = new Film();
+
     @Test
     public void testFilmId_whenGetMapping_returnSuccess(){
         int actualFilmId = myFilmtest.getFilmId();
@@ -85,5 +87,6 @@ public class FilmTest {
 
         Assertions.assertEquals(expectedFilmRating, actualFilmRating, "Film rating mismatched from setter method");
     }
+
 
 }

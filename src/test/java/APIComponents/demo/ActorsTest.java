@@ -7,6 +7,8 @@ public class ActorsTest {
 
     Actor myActorTest = new Actor("John", "Testopolis");
 
+    Actor myActorTestTwo = new Actor();
+
     @Test
     public void testGivenActorFirstName_whenGetMapping_returnSuccess() {
 
@@ -46,7 +48,7 @@ public class ActorsTest {
 
         Assertions.assertEquals(expectedActorId, actualActorId, "Actor ID mismatched from setter method");
     }
-    
+
     @Test
     public void testGivenActorFirstName_whenPutMapping_returnSuccess(){
         myActorTest.setActorFirstName("John");
