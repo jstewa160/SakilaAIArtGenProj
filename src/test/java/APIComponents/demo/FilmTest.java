@@ -9,8 +9,6 @@ public class FilmTest {
             "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",
             "PG");
 
-
-
     @Test
     public void testFilmId_whenGetMapping_returnSuccess(){
         int actualFilmId = myFilmtest.getFilmId();
@@ -19,6 +17,7 @@ public class FilmTest {
 
         Assertions.assertEquals(expectedFilmId, actualFilmId, "Failed film ID check");
     }
+
     @Test
     public void testGivenFilmTitleDescRating_whenGetMapping_returnSuccess(){
 
@@ -55,6 +54,16 @@ public class FilmTest {
         String actualFilmTitle = myFilmtest.getFilmTitle();
 
         Assertions.assertEquals(expectedFilmTitle, actualFilmTitle, "Film title mismatched from setter method");
+    }
+
+    @Test
+    public void testFilmId_whenPutMapping_returnSuccess(){
+        myFilmtest.setFilmId(1);
+
+        int expectedFilmId = 1;
+        int actualFilmId = 1;
+
+        Assertions.assertEquals(expectedFilmId, actualFilmId, "Film ID mismatched from setter method");
     }
 
     @Test

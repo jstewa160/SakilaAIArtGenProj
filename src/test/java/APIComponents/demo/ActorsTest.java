@@ -5,18 +5,65 @@ import org.junit.jupiter.api.Test;
 
 public class ActorsTest {
 
-    Actor myTestActor = new Actor("John", "Testopolis");
+    Actor myActorTest = new Actor("John", "Testopolis");
 
     @Test
-    public void testGivenActorFirstLastName_whenGetMapping_returnSuccess() {
+    public void testGivenActorFirstName_whenGetMapping_returnSuccess() {
 
-        String actualFirstName = myTestActor.getActorFirstName();
-        String actualLastName = myTestActor.getActorLastName();
+        String actualFirstName = myActorTest.getActorFirstName();
 
         String expectedFirstName = "John";
-        String expectedLastName = "Testopolis";
 
         Assertions.assertEquals(expectedFirstName, actualFirstName, "Failed First Name");
+    }
+
+    @Test
+    public void testGivenActorLastName_whenGetMapping_returnSuccess() {
+
+        String actualLastName = myActorTest.getActorLastName();
+
+        String expectedLastName = "Testopolis";
+
         Assertions.assertEquals(expectedLastName, actualLastName, "Failed Second Name");
+    }
+
+    @Test
+    public void testGivenActorID_whenGetMapping_returnSuccess(){
+
+        int actualID = myActorTest.getActorId();
+
+        int expectedID = 0;
+
+        Assertions.assertEquals(expectedID, actualID, "Failed ID Check");
+    }
+
+    @Test
+    public void testGivenActorID_whenPutMapping_returnSuccess(){
+        myActorTest.setActorId(1);
+
+        int expectedActorId = 1;
+        int actualActorId = myActorTest.getActorId();
+
+        Assertions.assertEquals(expectedActorId, actualActorId, "Actor ID mismatched from setter method");
+    }
+    
+    @Test
+    public void testGivenActorFirstName_whenPutMapping_returnSuccess(){
+        myActorTest.setActorFirstName("John");
+
+        String expectedFirstName = "John";
+        String actualFirstName = myActorTest.getActorFirstName();
+
+        Assertions.assertEquals(expectedFirstName, actualFirstName, "Actor First Name mismatched from setter method");
+    }
+
+    @Test
+    public void testGivenActorLastName_whenPutMapping_returnSuccess(){
+        myActorTest.setActorLastName("Testopolis");
+
+        String expectedLastName = "Testopolis";
+        String actualLastName = myActorTest.getActorLastName();
+
+        Assertions.assertEquals(expectedLastName, actualLastName, "Actor Last Name mismatched from setter method");
     }
 }
