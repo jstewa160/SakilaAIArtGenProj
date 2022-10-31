@@ -15,7 +15,7 @@ public class FilmTest {
     public void testFilmId_whenGetMapping_returnSuccess(){
         int actualFilmId = myFilmtest.getFilmId();
 
-        int expectedFilmId = 1;
+        int expectedFilmId = 0;
 
         Assertions.assertEquals(expectedFilmId, actualFilmId, "Failed film ID check");
     }
