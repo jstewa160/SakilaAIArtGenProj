@@ -9,6 +9,16 @@ public class FilmTest {
             "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies",
             "PG");
 
+
+
+    @Test
+    public void testFilmId_whenGetMapping_returnSuccess(){
+        int actualFilmId = myFilmtest.getFilmId();
+
+        int expectedFilmId = 1;
+
+        Assertions.assertEquals(expectedFilmId, actualFilmId, "Failed film ID check");
+    }
     @Test
     public void testGivenFilmTitleDescRating_whenGetMapping_returnSuccess(){
 
@@ -37,5 +47,9 @@ public class FilmTest {
         Assertions.assertEquals(expectedFilmRating, actualFilmRating, "Failed film rating check");
     }
 
+    @Test
+    public void testFilmTitle_whenPutMapping_returnSuccess(){
+
+    }
 
 }
