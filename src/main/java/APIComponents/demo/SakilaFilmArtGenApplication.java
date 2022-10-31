@@ -36,6 +36,11 @@ public class SakilaFilmArtGenApplication {
 		return actorRepo.findAll();
 	}
 
+	@PostMapping("/allActors")
+	public Actor createActor(@Validated @RequestBody Actor actor) {
+		return actorRepo.save(actor);
+	};
+
 	@PutMapping("/allActors/{id}")
 	public ResponseEntity<Actor> updateActor(@PathVariable(value = "id") Integer actorId,
 											 @Validated @RequestBody Actor actor) throws ResourceAccessException{
@@ -63,6 +68,11 @@ public class SakilaFilmArtGenApplication {
 	@GetMapping("/allFilms")
 	Iterable<Film> getAllFilms() { return filmRepo.findAll(); }
 
+	@PostMapping("/allFilms")
+	public Film createFilm(@Validated @RequestBody Film film) {
+		return filmRepo.save(film);
+	}
+
 	@PutMapping("/allFilms/{id}")
 	public ResponseEntity<Film> updateFilm(@PathVariable(value = "id") Integer filmId,
 										   @Validated @RequestBody Film film) throws ResourceAccessException{
@@ -87,8 +97,5 @@ public class SakilaFilmArtGenApplication {
 		return response;
 	}
 
-	//public void testFilm(){
-
-	//}
 
 }

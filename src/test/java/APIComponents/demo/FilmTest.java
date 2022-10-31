@@ -10,19 +10,32 @@ public class FilmTest {
             "PG");
 
     @Test
-    public void testGivenFilmTitleDescPG_whenGetMapping_returnSuccess(){
+    public void testGivenFilmTitleDescRating_whenGetMapping_returnSuccess(){
 
         String actualFilmTitle = myFilmtest.getFilmTitle();
-        String actualFilmDesc = myFilmtest.getFilmDesc();
-        String actualFilmRating = myFilmtest.getFilmRating();
 
         String expectedFilmTitle = "ACADEMY DINOSAUR";
-        String expectedFilmDesc = "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies";
-        String expectedFilmRating = "PG";
 
         Assertions.assertEquals(expectedFilmTitle, actualFilmTitle, "Failed film title check");
+    }
+
+    @Test
+    public void testGivenFilmDesc_whenGetMapping_returnSuccess(){
+        String actualFilmDesc = myFilmtest.getFilmDesc();
+
+        String expectedFilmDesc = "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies";
+
         Assertions.assertEquals(expectedFilmDesc, actualFilmDesc, "Failed film desc check");
+    }
+
+    @Test
+    public void testGivenFilmRating_whenGetMapping_returnSuccess(){
+        String actualFilmRating = myFilmtest.getFilmRating();
+
+        String expectedFilmRating = "PG";
+
         Assertions.assertEquals(expectedFilmRating, actualFilmRating, "Failed film rating check");
     }
+
 
 }
