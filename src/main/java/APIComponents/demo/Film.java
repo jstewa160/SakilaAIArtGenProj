@@ -1,12 +1,24 @@
 package APIComponents.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "film")
-
-
 public class Film {
+    @ManyToMany
+    @JoinTable(
+            name = "film_category",
+            joinColumns = @JoinColumn(name = "film_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    @JsonIgnore
+    Set<Category> filmCategory;
+
+
     //Attributes
     @Id
     @Column
@@ -19,10 +31,10 @@ public class Film {
     @Column(name = "rating")
     String filmRating;
     //Constructor
-    public Film(String hereFilmTitle, String hereFilmDesc, String hereFilmRating){
-        this.filmTitle = hereFilmTitle;
-        this.filmDesc = hereFilmDesc;
-        this.filmRating = hereFilmRating;
+    public Film(String filmTitle, String filmDesc, String filmRating){
+        this.filmTitle = filmTitle;
+        this.filmDesc = filmDesc;
+        this.filmRating = filmRating;
     }
 
     public Film(){}
@@ -59,4 +71,13 @@ public class Film {
     public void setFilmRating(String filmRating) {
         this.filmRating = filmRating;
     }
+
+    public Set<Category> getFilmCategory() {
+        return filmCategory;
+    }
+
+    public void setFilmCategory(Set<Category> filmCategory) {
+        this.filmCategory = filmCategory;
+    }
+
 }
