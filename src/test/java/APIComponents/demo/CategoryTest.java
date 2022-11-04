@@ -1,6 +1,5 @@
 package APIComponents.demo;
 import org.junit.Test;
-import org.junit.experimental.categories.Categories;
 import org.junit.jupiter.api.Assertions;
 
 public class CategoryTest {

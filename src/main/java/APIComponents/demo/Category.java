@@ -1,7 +1,6 @@
 package APIComponents.demo;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.json.JSONPropertyIgnore;
 
 import javax.persistence.*;
 import java.util.Set;
