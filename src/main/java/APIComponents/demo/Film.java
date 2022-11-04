@@ -18,6 +18,14 @@ public class Film {
     @JsonIgnore
     Set<Category> filmCategory;
 
+    @ManyToMany
+    @JoinTable(
+            name = "film_actor",
+            joinColumns = @JoinColumn(name ="film_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id")
+    )
+    @JsonIgnore
+    Set<Actor> filmActor;
 
     //Attributes
     @Id
@@ -70,14 +78,6 @@ public class Film {
 
     public void setFilmRating(String filmRating) {
         this.filmRating = filmRating;
-    }
-
-    public Set<Category> getFilmCategory() {
-        return filmCategory;
-    }
-
-    public void setFilmCategory(Set<Category> filmCategory) {
-        this.filmCategory = filmCategory;
     }
 
 }

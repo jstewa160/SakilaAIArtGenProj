@@ -1,6 +1,10 @@
 package APIComponents.demo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "actor")
@@ -10,9 +14,19 @@ import javax.persistence.*;
 public class Actor {
     //Attributes
     @Id
-    @Column(name="actor_id")
+    @Column(name = "actor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int actorId;
+
+//    @ManyToMany(mappedBy = "filmActor")
+//    @JsonBackReference
+//    Set<Film> actorFilm;
+    @ManyToMany
+    @JoinTable(name = "film_actor",
+            joinColumns = @JoinColumn(name = "actor_id"),
+            inverseJoinColumns = @JoinColumn(name = "film_id")
+    )
+    Set<Film> actorFilm;
 
     @Column(name = "first_name")
     String actorFirstName;

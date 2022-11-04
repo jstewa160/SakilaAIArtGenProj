@@ -129,6 +129,12 @@ public class SakilaFilmArtGenApplication {
 		return filmRepo.findByCategory(category);
 	}
 
+	@GetMapping("/actor/{myActor}")
+	public @ResponseBody
+	List<Film> getFilmByActor(@PathVariable(value = "myActor") String actor){
+		return filmRepo.findByActor(actor);
+	}
+
 //	@GetMapping("/filmsByActor/{id}")
 //	public List<Film> getFilmsByActor(@PathVariable(value = "id") int actorId){
 //		return filmRepo.getFilmsByActor(actorId);
