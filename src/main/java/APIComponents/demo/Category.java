@@ -31,13 +31,13 @@ public class Category {
 
     }
 
-    public Set<Film> getCategoryFilm() {
-        return categoryFilm;
-    }
-
-    public void setCategoryFilm(Set<Film> categoryFilm) {
-        this.categoryFilm = categoryFilm;
-    }
+//    public Set<Film> getCategoryFilm() {
+//        return categoryFilm;
+//    }
+//
+//    public void setCategoryFilm(Set<Film> categoryFilm) {
+//        this.categoryFilm = categoryFilm;
+//    }
 
     public int getCategoryId() {
         return categoryId;
