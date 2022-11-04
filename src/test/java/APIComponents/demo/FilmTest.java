@@ -96,7 +96,7 @@ public class FilmTest {
     @Test
     public void defaultFilmObjTest(){
         Film filmExp = new Film();
-        Film filmAcc = new Film();
+        Film filmAcc = filmExp;
         Assertions.assertEquals(filmExp, filmAcc);
     }
 
