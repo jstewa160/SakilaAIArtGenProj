@@ -1,4 +1,4 @@
-package APIComponents.demo;
+package apipackagecomponents.demo;
 
 import org.json.JSONArray;
 import org.json.JSONException;

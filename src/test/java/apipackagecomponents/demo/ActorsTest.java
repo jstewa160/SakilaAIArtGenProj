@@ -1,4 +1,4 @@
-package APIComponents.demo;
+package apipackagecomponents.demo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package APIComponents.demo;
+package apipackagecomponents.demo;
 
 import javax.persistence.*;
 import java.util.Set;

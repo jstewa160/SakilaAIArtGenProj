@@ -1,4 +1,4 @@
-package APIComponents.demo;
+package apipackagecomponents.demo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

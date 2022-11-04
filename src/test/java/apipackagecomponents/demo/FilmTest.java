@@ -1,4 +1,4 @@
-package APIComponents.demo;
+package apipackagecomponents.demo;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -21,6 +21,12 @@ public class FilmTest {
         Assertions.assertEquals(expectedFilmId, actualFilmId, "Failed film ID check");
     }
 
+    @Test
+    public void defaultFilmObjTest(){
+        Film filmExp = new Film();
+        Film filmAcc = filmExp;
+        Assertions.assertEquals(filmExp, filmAcc);
+    }
     @Test
     public void testGivenFilmTitleDesc_whenGetMapping_returnSuccess(){
 
@@ -89,12 +95,7 @@ public class FilmTest {
         Assertions.assertEquals(expectedFilmRating, actualFilmRating, "Film rating mismatched from setter method");
     }
 
-    @Test
-    public void defaultFilmObjTest(){
-        Film filmExp = new Film();
-        Film filmAcc = filmExp;
-        Assertions.assertEquals(filmExp, filmAcc);
-    }
+
 
 
 }

@@ -1,4 +1,4 @@
-import APIComponents.demo.SakilaFilmArtGenApplication;
+import apipackagecomponents.demo.SakilaFilmArtGenApplication;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

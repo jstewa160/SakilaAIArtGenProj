@@ -1,4 +1,4 @@
-import APIComponents.demo.SakilaFilmArtGenApplication;
+import apipackagecomponents.demo.SakilaFilmArtGenApplication;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
