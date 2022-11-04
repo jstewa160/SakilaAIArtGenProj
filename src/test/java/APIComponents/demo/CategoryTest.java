@@ -9,6 +9,13 @@ public class CategoryTest {
             "Action");
 
     @Test
+    public void defaultFilmObj(){
+        Category catExp = new Category();
+        Category catAcc = catExp;
+
+        Assertions.assertEquals(catExp, catAcc);
+    }
+    @Test
     public void testCategoryId_whenGetMapping_returnSuccess(){
         int actualCategoryId = myCategoryTest.getCategoryId();
 
