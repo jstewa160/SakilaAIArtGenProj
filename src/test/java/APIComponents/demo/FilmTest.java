@@ -93,10 +93,12 @@ public class FilmTest {
         Assertions.assertEquals(expectedFilmRating, actualFilmRating, "Film rating mismatched from setter method");
     }
 
-//    @Test
-//    public void testFilmCategory_whenGetMapping_returnSuccess(){
-//        myFilmTest.
-//    }
+    @Test
+    public void defaultFilmObjTest(){
+        Film filmExp = new Film();
+        Film filmAcc = new Film();
+        Assertions.assertEquals(filmExp, filmAcc);
+    }
 
 
 }
