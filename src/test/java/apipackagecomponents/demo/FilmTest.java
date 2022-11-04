@@ -13,7 +13,7 @@ public class FilmTest {
 
 
     @Test
-    public void testFilmId_whenGetMapping_returnSuccess(){
+    void testFilmId_whenGetMapping_returnSuccess(){
         int actualFilmId = myFilmtest.getFilmId();
 
         int expectedFilmId = 0;
@@ -22,13 +22,13 @@ public class FilmTest {
     }
 
     @Test
-    public void defaultFilmObjTest(){
+    void defaultFilmObjTest(){
         Film filmExp = new Film();
         Film filmAcc = filmExp;
         Assertions.assertEquals(filmExp, filmAcc);
     }
     @Test
-    public void testGivenFilmTitleDesc_whenGetMapping_returnSuccess(){
+    void testGivenFilmTitleDesc_whenGetMapping_returnSuccess(){
 
         String actualFilmTitle = myFilmtest.getFilmTitle();
 
@@ -38,7 +38,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testGivenFilmDesc_whenGetMapping_returnSuccess(){
+    void testGivenFilmDesc_whenGetMapping_returnSuccess(){
         String actualFilmDesc = myFilmtest.getFilmDesc();
 
         String expectedFilmDesc = "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies";
@@ -47,7 +47,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testGivenFilmRating_whenGetMapping_returnSuccess(){
+    void testGivenFilmRating_whenGetMapping_returnSuccess(){
         String actualFilmRating = myFilmtest.getFilmRating();
 
         String expectedFilmRating = "PG";
@@ -56,7 +56,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testFilmTitle_whenPutMapping_returnSuccess(){
+    void testFilmTitle_whenPutMapping_returnSuccess(){
         myFilmtest.setFilmTitle("ACADEMY DINOSAURR");
 
         String expectedFilmTitle = "ACADEMY DINOSAURR";
@@ -66,7 +66,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testFilmId_whenPutMapping_returnSuccess(){
+    void testFilmId_whenPutMapping_returnSuccess(){
         myFilmtest.setFilmId(1);
 
         int expectedFilmId = 1;
@@ -76,7 +76,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testFilmDesc_whenPutMapping_returnSuccess(){
+    void testFilmDesc_whenPutMapping_returnSuccess(){
         myFilmtest.setFilmDesc("A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies");
 
         String expectedFilmDesc = "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies";
@@ -86,7 +86,7 @@ public class FilmTest {
     }
 
     @Test
-    public void testFilmRating_whenPutMapping_returnSuccess(){
+    void testFilmRating_whenPutMapping_returnSuccess(){
         myFilmtest.setFilmRating("PG");
 
         String expectedFilmRating = "PG";
