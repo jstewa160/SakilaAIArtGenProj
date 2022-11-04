@@ -13,7 +13,7 @@ public class CategoryTest {
 
         int expectedCategoryId = 1;
 
-        Assertions.assertEquals(expectedCategoryId, actualCategoryId, "WORKED");
+        Assertions.assertEquals(expectedCategoryId, actualCategoryId, "Failed Category ID Check");
     }
 
     @Test
@@ -22,7 +22,17 @@ public class CategoryTest {
 
         String expectedCategoryName = "Action";
 
-        Assertions.assertEquals(expectedCategoryName, actualCategoryName);
+        Assertions.assertEquals(expectedCategoryName, actualCategoryName, "Failed Category Name Check");
+    }
+
+    @Test
+    public void testFilmTitle_whenPutMapping_returnSuccess(){
+        myCategoryTest.setCategoryName("Action");
+
+        String expectedCategoryName = "Action";
+        String actualCategoryName = myCategoryTest.getCategoryName();
+
+        Assertions.assertEquals(expectedCategoryName, actualCategoryName, "Category name mismatched from setter method");
     }
 
 }
