@@ -13,7 +13,7 @@ public class CategoryTest {
 
         int expectedCategoryId = 1;
 
-        Assertions.assertEquals(expectedCategoryId, actualCategoryId);
+        Assertions.assertEquals(expectedCategoryId, actualCategoryId, "WORKED");
     }
 
     @Test
