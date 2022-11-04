@@ -1,4 +1,5 @@
 package APIComponents.demo;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -14,6 +15,16 @@ public class CategoryTest {
         int expectedCategoryId = 1;
 
         Assertions.assertEquals(expectedCategoryId, actualCategoryId, "Failed Category ID Check");
+    }
+
+    @Test
+    public void testCategoryId_whenPutMapping_returnSuccess(){
+        myCategoryTest.setCategoryId(1);
+
+        int expectedCategoryId = 1;
+        int actualFilmId = 1;
+
+        Assertions.assertEquals(expectedCategoryId, actualFilmId, "Category is mismatched from setter method");
     }
 
     @Test
@@ -34,5 +45,6 @@ public class CategoryTest {
 
         Assertions.assertEquals(expectedCategoryName, actualCategoryName, "Category name mismatched from setter method");
     }
+
 
 }
