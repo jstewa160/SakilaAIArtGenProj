@@ -21,4 +21,9 @@ public interface FilmRepo extends JpaRepository<Film, Integer>{
             "WHERE actor.first_name = ?1", nativeQuery = true)
     List<Film> findByActor(String first_name);
 
+    @Query(value = "SELECT DISTINCT * FROM film WHERE film_id != ?1 ORDER BY rand() LIMIT 1", nativeQuery = true)
+    Film randomFilm(int id);
+
+
+
 }

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
@@ -84,12 +85,17 @@ public class SakilaFilmArtGenApplication {
 	@GetMapping("/allFilms")
 	Iterable<Film> getAllFilms() { return filmRepo.findAll(); }
 
-	@GetMapping("/singleFilm/{id}")
-	public Film createFilm(@Validated @RequestBody int filmId) {
-		return filmRepo.findById(filmId).orElseThrow(() -> new ResourceAccessException("Film not found at index " + filmId));
+	@GetMapping("/allFilms/random/{id}")
+	public Film randomFilm(@PathVariable(value = "id") Integer id) { return filmRepo.randomFilm(id); }
+
+
+	@GetMapping("/allFilms/single/{id}")
+	public @ResponseBody
+	Optional<Film> getFilm(@PathVariable(value="id") Integer id) {
+		return filmRepo.findById(id);
 	}
 
-	@PostMapping("/allFilms")
+		@PostMapping("/allFilms")
 	public Film createFilm(@Validated @RequestBody Film film) {
 		return filmRepo.save(film);
 	}
@@ -135,10 +141,6 @@ public class SakilaFilmArtGenApplication {
 		return filmRepo.findByActor(actor);
 	}
 
-//	@GetMapping("/filmsByActor/{id}")
-//	public List<Film> getFilmsByActor(@PathVariable(value = "id") int actorId){
-//		return filmRepo.getFilmsByActor(actorId);
-//	}
 
 	@GetMapping("/films/{id}")
 	public ModelAndView getFilm(@PathVariable int id) throws JSONException, InterruptedException {
