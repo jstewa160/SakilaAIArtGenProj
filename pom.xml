@@ -19,7 +19,8 @@
     <maven.compiler.source>17</maven.compiler.source>  
     <maven.compiler.target>17</maven.compiler.target>  
     <sonar.organization>jstewa160</sonar.organization>  
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url> 
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.exclusions>src/SakilaArtGenApplication</sonar.exclusions>
   </properties>  
   <dependencies> 
     <dependency> 
