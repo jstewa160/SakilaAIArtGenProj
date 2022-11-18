@@ -140,7 +140,7 @@ public class SakilaFilmArtGenApplication {
 	List<Film> getFilmByActor(@PathVariable(value = "myActor") String actor){
 		return filmRepo.findByActor(actor);
 	}
-
+ 
 
 	@GetMapping("/films/{id}")
 	public ModelAndView getFilm(@PathVariable int id) throws JSONException, InterruptedException {
